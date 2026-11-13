@@ -33,7 +33,7 @@ export default function FolderUploadPage() {
         setSelectedFolderId(res.data[0].id.toString());
       } else {
         // If user has zero folders, default newFolderName so the user never encounters a blank field
-        setNewFolderName('College_Materials');
+        setNewFolderName('');
       }
     } catch (err) {
       console.error('Failed to load folders', err);

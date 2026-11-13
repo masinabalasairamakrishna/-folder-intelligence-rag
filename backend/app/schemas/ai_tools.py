@@ -63,3 +63,5 @@ class DashboardStatsResponse(BaseModel):
     indexing_status_distribution: Dict[str, int]
     recent_folders: List[Dict[str, Any]]
     recent_conversations: List[Dict[str, Any]]
+    knowledge_graph: Optional[Dict[str, Any]] = None
+    activity_timeline: Optional[List[Dict[str, Any]]] = None

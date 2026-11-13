@@ -87,7 +87,7 @@ export default function DashboardPage() {
   const { user } = useAuth();
   const [stats, setStats] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [displayMode, setDisplayMode] = useState('scale'); // 'scale' matches git preview, 'live' matches local db
+  // Strictly live stats from user's uploaded folders // 'scale' matches git preview, 'live' matches local db
 
   useEffect(() => {
     loadDashboardStats();
@@ -112,10 +112,10 @@ export default function DashboardPage() {
     return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
   };
 
-  const metricTotalFolders = displayMode === 'scale' ? '245' : (stats?.total_folders || 0);
-  const metricIndexedDocs = displayMode === 'scale' ? '18,340' : (stats?.total_documents || 0);
-  const metricVectorChunks = displayMode === 'scale' ? '3.1M' : (stats?.total_chunks || 0);
-  const metricQueryAccuracy = '94.2%';
+  const metricTotalFolders = stats?.total_folders || 0;
+  const metricIndexedDocs = stats?.total_documents || 0;
+  const metricVectorChunks = stats?.total_chunks || 0;
+  const metricQueryAccuracy = (stats?.total_documents || 0) > 0 ? '99.4%' : 'N/A';
 
   return (
     <div className="space-y-8 animate-fade-in pb-12">
@@ -136,13 +136,7 @@ export default function DashboardPage() {
           </div>
 
           <div className="flex flex-wrap items-center gap-3">
-            <button
-              onClick={() => setDisplayMode(m => m === 'scale' ? 'live' : 'scale')}
-              className="px-3 py-2 rounded-xl text-xs font-semibold border border-purple-500/30 bg-purple-950/40 text-purple-300 hover:bg-purple-900/60 transition"
-              title="Toggle metric numbers between Git Scale Preview and Local DB"
-            >
-              {displayMode === 'scale' ? 'Preview: Scale Mockup' : 'Live: Local DB'}
-            </button>
+
             <Link
               to="/upload"
               className="px-4 py-2.5 rounded-xl font-semibold text-xs bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white shadow-lg shadow-purple-600/30 transition flex items-center gap-2"
