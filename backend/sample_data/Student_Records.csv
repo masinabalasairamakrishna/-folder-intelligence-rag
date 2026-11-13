@@ -1,0 +1,8 @@
+student_id,name,branch,semester,gpa,major_project_topic,grade
+101,Aarav Sharma,Artificial Intelligence,8,9.4,Autonomous Multi-Agent Drone Navigation,A+
+102,Diya Patel,Data Science,8,8.9,Healthcare Diagnostics using Transformer Models,A
+103,Rohan Verma,Computer Science,8,9.1,Retrieval-Augmented Generation for Technical Manuals,A+
+104,Ananya Reddy,Information Technology,8,8.7,Secure Blockchain Decentralized Identity Verification,A
+105,Vikram Malhotra,Artificial Intelligence,8,9.6,Federated Learning on Edge Mobile Devices,A+
+106,Sneha Joshi,Computer Science,8,8.5,Optimized Deep Reinforcement Learning for Trading,B+
+107,Kavya Krishnan,Artificial Intelligence,8,9.3,Telugu-English Cross-Lingual Semantic Search Engine,A+

@@ -1,0 +1,22 @@
+# Database Management Systems (DBMS) Course Notes
+## Unit 1: System Structure and Relational Models
+
+### Section 1: Three-Schema Architecture
+The three-schema architecture defines the structure of a DBMS at three abstract levels:
+1. Internal Schema (Physical Level): Describes physical storage structures and access paths.
+2. Conceptual Schema (Logical Level): Describes the structure of the whole database for a community of users, hiding storage details and concentrating on entities, relationships, and constraints.
+3. External Schema (View Level): Describes part of the database that a particular user group is interested in, hiding the rest of the database.
+
+### Section 2: ACID Properties of Transactions
+For reliable processing, database transactions must guarantee four fundamental properties (ACID):
+- Atomicity: All changes to data are performed as if they are a single operation ("all or nothing").
+- Consistency: Data is in a valid state when a transaction starts and when it ends.
+- Isolation: The intermediate state of a transaction is invisible to other transactions.
+- Durability: After a transaction successfully completes, changes to data persist and are not undone even during a system crash.
+
+### Section 3: Normalization
+Normalization is the process of organizing data in a database to reduce redundancy and eliminate anomalies (insertion, update, and deletion anomalies):
+- 1NF (First Normal Form): All column values are atomic.
+- 2NF (Second Normal Form): Table is in 1NF and all non-key attributes are fully functionally dependent on the primary key.
+- 3NF (Third Normal Form): Table is in 2NF and has no transitive dependencies.
+- BCNF (Boyce-Codd Normal Form): Every determinant is a candidate key.

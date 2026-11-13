@@ -1,0 +1,19 @@
+# Department of Computer Science & Engineering
+## Course: CS801 - Artificial Intelligence & Expert Systems
+
+### Chapter 1: Introduction to Artificial Intelligence
+Artificial Intelligence (AI) is the branch of computer science dedicated to creating systems capable of performing tasks that typically require human intelligence. These tasks include visual perception, speech recognition, decision-making, and language translation.
+
+The foundations of AI rest upon philosophy, mathematics, economics, neuroscience, psychology, computer engineering, control theory, and linguistics. Alan Turing introduced the famous Turing Test in 1950 in his paper "Computing Machinery and Intelligence", proposing an operational test for intelligent behavior.
+
+### Chapter 2: Search Algorithms
+Search algorithms form the backbone of problem-solving agents in classical AI.
+1. Uninformed Search (Blind Search):
+   - Breadth-First Search (BFS): Explores nodes level by level. Optimal and complete if path cost is non-decreasing with depth. Space complexity is O(b^d).
+   - Depth-First Search (DFS): Explores as deep as possible along each branch before backtracking. Space complexity is O(b*m).
+2. Informed Search (Heuristic Search):
+   - Greedy Best-First Search: Evaluates nodes using f(n) = h(n).
+   - A* Search: Evaluates nodes using f(n) = g(n) + h(n), where g(n) is the cost so far to reach n, and h(n) is the estimated cost from n to the goal. A* is both complete and optimal if the heuristic h(n) is admissible (never overestimates) and consistent.
+
+### Chapter 3: Knowledge Representation and Logic
+Propositional logic and First-Order Logic (FOL) enable agents to represent facts and infer new conclusions using inference rules such as Modus Ponens and Resolution. Ontologies and Semantic Networks provide structured relational vocabularies for reasoning about domain entities.
