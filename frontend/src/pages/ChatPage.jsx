@@ -280,15 +280,15 @@ export default function ChatPage() {
                 setTempModel(localStorage.getItem('gemini_model') || 'gemini-1.5-flash');
                 setShowKeyModal(true);
               }}
-              className={`flex items-center gap-1.5 px-3 py-1 rounded-xl text-xs font-semibold border transition ${
+              className={`flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold border transition ${
                 hasGeminiKey
-                  ? 'bg-purple-950/80 border-purple-500/50 text-purple-300 hover:bg-purple-900/60 shadow-sm shadow-purple-900/40'
+                  ? 'bg-gradient-to-r from-purple-950/80 to-indigo-950/80 border-purple-400/60 text-purple-200 shadow-md shadow-purple-900/40 hover:border-purple-300'
                   : 'bg-navy-950 border-white/10 text-slate-300 hover:text-white hover:border-purple-500/40'
               }`}
               title="Click to configure Gemini API Key or change AI Model"
             >
-              <Key className="w-3.5 h-3.5 text-amber-400" />
-              <span>{hasGeminiKey ? 'Gemini 1.5 Active' : 'Offline RAG'}</span>
+              <Sparkles className="w-3.5 h-3.5 text-amber-300 animate-pulse" />
+              <span>{hasGeminiKey ? 'Gemini 1.5 Active' : 'Offline RAG Mode'}</span>
             </button>
 
             {/* Language Switcher */}
