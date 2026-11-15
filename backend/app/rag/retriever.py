@@ -8,11 +8,13 @@ def retrieve_context(
     folder_id: Optional[int] = None,
     folder_ids: Optional[List[int]] = None,
     document_ids: Optional[List[int]] = None,
-    top_k: int = 5
+    top_k: int = 5,
+    chronological: bool = False
 ) -> Tuple[str, List[SourceCitation]]:
     """
     Retrieve top-k chunks, format contextual string with bracketed citations,
     and return validated SourceCitation objects.
+    When chronological is False (default), retains ranked vector similarity order.
     """
     raw_results = vector_store.search(
         query=query,
@@ -26,8 +28,8 @@ def retrieve_context(
     if not raw_results:
         return "", []
 
-    # When retrieving a comprehensive batch (top_k >= 8), sort chunks chronologically by document page and chunk index
-    if top_k >= 8:
+    # Only sort chronologically when explicitly requested (e.g. for full document chronological summary)
+    if chronological:
         raw_results = sorted(
             raw_results,
             key=lambda x: (
@@ -74,4 +76,3 @@ def retrieve_context(
 
     formatted_context = "\n---\n".join(context_blocks)
     return formatted_context, citations
-
